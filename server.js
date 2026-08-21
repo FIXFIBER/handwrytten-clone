@@ -7,8 +7,9 @@ const PORT = process.env.PORT || 8080;
 const PAGES_DIR = path.join(__dirname, 'pages');
 const ASSETS_DIR = path.join(__dirname, 'assets');
 
-// Serve static assets
-app.use('/assets', express.static(ASSETS_DIR, { maxAge: '1d' }));
+// Serve static assets from /wp-content
+app.use('/wp-content', express.static(ASSETS_DIR + '/wp-content'));
+app.use('/wp-includes', express.static(ASSETS_DIR + '/wp-includes'));
 
 // Serve pages
 app.get('/', (req, res) => {
