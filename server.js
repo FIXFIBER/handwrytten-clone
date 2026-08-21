@@ -12,20 +12,15 @@ app.use('/assets', express.static(ASSETS_DIR, { maxAge: '1d' }));
 
 // Serve pages
 app.get('/', (req, res) => {
-  res.sendFile(path.join(PAGES_DIR, 'www.handwrytten.com', 'index.html'));
-});
-
-app.get('/integrations/integrate-automate', (req, res) => {
-  res.sendFile(path.join(PAGES_DIR, 'www.handwrytten.com', 'integrations', 'integrate-automate', 'index.html'));
+  res.sendFile(path.join(PAGES_DIR, 'index.html'));
 });
 
 // Catch-all for other pages
 app.use((req, res) => {
-  const urlPath = req.path;
+  const urlPath = req.path.replace(/\/$/, '');
   const possiblePaths = [
-    path.join(PAGES_DIR, 'www.handwrytten.com', urlPath, 'index.html'),
-    path.join(PAGES_DIR, 'www.handwrytten.com', urlPath + '.html'),
     path.join(PAGES_DIR, urlPath, 'index.html'),
+    path.join(PAGES_DIR, urlPath + '.html'),
   ];
   
   for (const p of possiblePaths) {
