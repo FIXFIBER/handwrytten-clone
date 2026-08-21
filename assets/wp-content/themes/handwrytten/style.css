@@ -1701,6 +1701,26 @@ p + .cta-btn {
 	-o-transition: all 0.5s cubic-bezier(0.5, 0, 0.5, 1);
 	transition: all 0.5s cubic-bezier(0.5, 0, 0.5, 1);
 }
+/* TOP10 NG text logo (replaces handwritten image) */
+#globalHeader .logo.dsk .dx-logo,
+#globalHeader .logo.stk .dx-logo,
+.menu-inner .logo .dx-logo {
+	display: inline-block;
+	font-family: "hwmasonregular", "hwryanregular", cursive;
+	font-weight: 400;
+	color: #1f1f1f;
+	text-decoration: none;
+	line-height: 1;
+	letter-spacing: 0.5px;
+}
+#globalHeader .logo.dsk .dx-logo { font-size: 32px; }
+#globalHeader .logo.stk { width: auto; }
+#globalHeader .logo.stk .dx-logo,
+.menu-inner .logo .dx-logo { font-size: 24px; }
+.dx-logo .dx-ng { color: #d23b3b; }
+.dx-logo-dark { color: #1f1f1f !important; }
+.dx-logo-white { color: #ffffff !important; }
+.dx-logo-white .dx-ng { color: #ffd2d2; }
 #globalHeader .logo.stk .logo-dot {
 	position: absolute;
 	left: 0;
