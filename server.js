@@ -7,8 +7,15 @@ const PORT = process.env.PORT || 8080;
 const PAGES_DIR = path.join(__dirname, 'pages');
 const ASSETS_DIR = path.join(__dirname, 'assets');
 
+<<<<<<< HEAD
 app.use('/assets', express.static(ASSETS_DIR, { maxAge: '1d' }));
 
+=======
+// Serve static assets
+app.use('/assets', express.static(ASSETS_DIR, { maxAge: '1d' }));
+
+// Serve pages
+>>>>>>> 2537b18 (Initial commit - full Handwrytten website crawl)
 app.get('/', (req, res) => {
   res.sendFile(path.join(PAGES_DIR, 'www.handwrytten.com', 'index.html'));
 });
@@ -17,6 +24,10 @@ app.get('/integrations/integrate-automate', (req, res) => {
   res.sendFile(path.join(PAGES_DIR, 'www.handwrytten.com', 'integrations', 'integrate-automate', 'index.html'));
 });
 
+<<<<<<< HEAD
+=======
+// Catch-all for other pages
+>>>>>>> 2537b18 (Initial commit - full Handwrytten website crawl)
 app.use((req, res) => {
   const urlPath = req.path;
   const possiblePaths = [
@@ -24,12 +35,26 @@ app.use((req, res) => {
     path.join(PAGES_DIR, 'www.handwrytten.com', urlPath + '.html'),
     path.join(PAGES_DIR, urlPath, 'index.html'),
   ];
+<<<<<<< HEAD
   for (const p of possiblePaths) {
     if (fs.existsSync(p)) return res.sendFile(p);
   }
+=======
+  
+  for (const p of possiblePaths) {
+    if (fs.existsSync(p)) {
+      return res.sendFile(p);
+    }
+  }
+  
+>>>>>>> 2537b18 (Initial commit - full Handwrytten website crawl)
   res.status(404).send('Page not found');
 });
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 2537b18 (Initial commit - full Handwrytten website crawl)
