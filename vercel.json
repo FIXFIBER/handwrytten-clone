@@ -1,0 +1,17 @@
+{
+  "services": {
+    "handwrytten-clone": {
+      "root": ".",
+      "buildCommand": "echo \"No build needed\""
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": {
+        "type": "service",
+        "service": "handwrytten-clone"
+      }
+    }
+  ]
+}
