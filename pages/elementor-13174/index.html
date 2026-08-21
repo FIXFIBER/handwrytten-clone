@@ -241,5 +241,21 @@ document.addEventListener( 'wpcf7submit', e => turnstile.reset() );
 //# sourceURL=cloudflare-turnstile-js-after
 </script>
 <script id="googlesitekit-events-provider-contact-form-7-js" src="/wp-content/plugins/google-site-kit/dist/assets/js/googlesitekit-events-provider-contact-form-7-0310812e6aa65ef3c958.js" defer></script>
-	</body>
+	
+<script>
+/* FALLBACK_REVEAL: always reveal content after load (animations are progressive enhancement) */
+(function(){
+  function reveal(){
+    try{
+      var l=document.getElementById('loader'); if(l){l.style.opacity='0';l.style.display='none';l.style.visibility='hidden';}
+      var els=document.querySelectorAll('.hasAnim');
+      for(var i=0;i<els.length;i++){els[i].style.opacity='1';els[i].style.visibility='visible';}
+      document.body.style.overflow='';document.body.style.height='';document.body.style.width='';
+    }catch(e){}
+  }
+  window.addEventListener('load', function(){ setTimeout(reveal, 2500); });
+  setTimeout(reveal, 8000);
+})();
+</script>
+</body>
 </html>

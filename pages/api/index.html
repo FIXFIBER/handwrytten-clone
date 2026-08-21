@@ -43,5 +43,21 @@ Documentation for each package is available on the respective package page.</li>
 <blockquote>
 <p><strong>Note:</strong> Authentication using login/password via <code>/auth/authorization</code> is deprecated. It remains supported for existing integrations but is not recommended for new ones.</p>
 </blockquote></div></article><nav class="pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--next" href="/api/sign-in-with-password"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Sign In with Password</div></a></nav></div></div><div class="col col--3"></div></div></div></main></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Made with â¤ in Arizona. Copyright Â© 2026 Handwrytten, Inc.</div></div></div></footer></div>
+
+<script>
+/* FALLBACK_REVEAL: always reveal content after load (animations are progressive enhancement) */
+(function(){
+  function reveal(){
+    try{
+      var l=document.getElementById('loader'); if(l){l.style.opacity='0';l.style.display='none';l.style.visibility='hidden';}
+      var els=document.querySelectorAll('.hasAnim');
+      for(var i=0;i<els.length;i++){els[i].style.opacity='1';els[i].style.visibility='visible';}
+      document.body.style.overflow='';document.body.style.height='';document.body.style.width='';
+    }catch(e){}
+  }
+  window.addEventListener('load', function(){ setTimeout(reveal, 2500); });
+  setTimeout(reveal, 8000);
+})();
+</script>
 </body>
 </html>

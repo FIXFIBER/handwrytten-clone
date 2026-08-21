@@ -10,7 +10,7 @@
 
 <link rel="shortcut icon" href="/wp-content/themes/handwrytten/images/favicon.png" />
 <link rel="stylesheet" href="/wp-content/themes/handwrytten/css/fonts/fonts.css">
-<link href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css" />
+<link href="/wp-content/themes/handwrytten/css/vendor/normalize.min.css" rel="stylesheet" type="text/css" />
 <link href="/wp-content/themes/handwrytten/css/icons.css" rel="stylesheet" />
 <link href="/wp-content/themes/handwrytten/css/select2.min.css" rel="stylesheet" />
 <link href="/wp-content/themes/handwrytten/css/fonts/fonts.css" rel="stylesheet" type="text/css" />
@@ -1260,11 +1260,11 @@ document.getElementById( "ak_js_2" ).setAttribute( "value", ( new Date() ).getTi
 
 
 <!-- jquery -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/wp-content/themes/handwrytten/js/vendor/jquery.min.js"></script>
 
 <!-- greensock animation -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/MotionPathPlugin.min.js"></script>
+<script src="/wp-content/themes/handwrytten/js/vendor/gsap.min.js"></script>
+<script src="/wp-content/themes/handwrytten/js/vendor/MotionPathPlugin.min.js"></script>
 <script src="/wp-content/themes/handwrytten/js/DrawSVGPlugin.min.js"></script>
 
 <!-- animated typer plugin -->
@@ -1454,5 +1454,21 @@ document.addEventListener( 'wpcf7submit', e => turnstile.reset() );
 <script id="lwptoc-main-js" src="/wp-content/plugins/luckywp-table-of-contents/front/assets/main.min.js?ver=2.1.14"></script>
 
 
+
+<script>
+/* FALLBACK_REVEAL: always reveal content after load (animations are progressive enhancement) */
+(function(){
+  function reveal(){
+    try{
+      var l=document.getElementById('loader'); if(l){l.style.opacity='0';l.style.display='none';l.style.visibility='hidden';}
+      var els=document.querySelectorAll('.hasAnim');
+      for(var i=0;i<els.length;i++){els[i].style.opacity='1';els[i].style.visibility='visible';}
+      document.body.style.overflow='';document.body.style.height='';document.body.style.width='';
+    }catch(e){}
+  }
+  window.addEventListener('load', function(){ setTimeout(reveal, 2500); });
+  setTimeout(reveal, 8000);
+})();
+</script>
 </body>
 </html>
