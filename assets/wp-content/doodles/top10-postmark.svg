@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 200" fill="none" stroke="#123fb5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <!-- cancellation wavy lines (left) -->
+  <g>
+    <path d="M6,70 q9,-9 18,0 q9,9 18,0 q9,-9 18,0" stroke-width="2.4"/>
+    <path d="M6,84 q9,-9 18,0 q9,9 18,0 q9,-9 18,0" stroke-width="2.4"/>
+    <path d="M6,98 q9,-9 18,0 q9,9 18,0 q9,-9 18,0" stroke-width="2.4"/>
+    <path d="M6,112 q9,-9 18,0 q9,9 18,0 q9,-9 18,0" stroke-width="2.4"/>
+    <path d="M6,126 q9,-9 18,0 q9,9 18,0 q9,-9 18,0" stroke-width="2.4"/>
+  </g>
+
+  <!-- postmark circle -->
+  <circle cx="150" cy="98" r="62" stroke-width="3"/>
+  <circle cx="150" cy="98" r="54" stroke-width="1.6"/>
+
+  <!-- curved texts -->
+  <defs>
+    <path id="pm-top" d="M150,44 a54,54 0 0 1 0,108" />
+    <path id="pm-bot" d="M150,152 a54,54 0 0 1 0,-108" />
+  </defs>
+  <text font-family="'Playfair Display', Georgia, serif" font-size="13" font-weight="700" letter-spacing="2" fill="#123fb5" stroke="none">
+    <textPath href="#pm-top" startOffset="50%" text-anchor="middle">TOP10 NG</textPath>
+  </text>
+  <text font-family="'Playfair Display', Georgia, serif" font-size="13" font-weight="700" letter-spacing="2" fill="#123fb5" stroke="none">
+    <textPath href="#pm-bot" startOffset="50%" text-anchor="middle">IN NIGERIA</textPath>
+  </text>
+
+  <!-- center text -->
+  <text x="150" y="93" font-family="'Playfair Display', Georgia, serif" font-size="15" font-weight="700" fill="#123fb5" stroke="none" text-anchor="middle">WITH</text>
+  <text x="150" y="110" font-family="'Playfair Display', Georgia, serif" font-size="15" font-weight="700" fill="#ff7a59" stroke="none" text-anchor="middle">LOVE</text>
+
+  <!-- small star dots -->
+  <circle cx="150" cy="54" r="1.6" fill="#123fb5" stroke="none"/>
+  <circle cx="150" cy="142" r="1.6" fill="#123fb5" stroke="none"/>
+</svg>
