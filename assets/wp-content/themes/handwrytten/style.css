@@ -1701,7 +1701,7 @@ p + .cta-btn {
 	-o-transition: all 0.5s cubic-bezier(0.5, 0, 0.5, 1);
 	transition: all 0.5s cubic-bezier(0.5, 0, 0.5, 1);
 }
-/* TOP10 NG text logo (replaces handwritten image) */
+/* TOP10 NG animated SVG logo (replaces handwritten image) */
 #globalHeader .logo.dsk .dx-logo,
 #globalHeader .logo.stk .dx-logo,
 .menu-inner .logo .dx-logo {
@@ -1713,6 +1713,9 @@ p + .cta-btn {
 	line-height: 1;
 	letter-spacing: 0.5px;
 }
+#globalHeader .logo.dsk .dx-logo-img { width: 178px; height: auto; }
+#globalHeader .logo.stk .dx-logo-img { width: 120px; height: auto; }
+.menu-inner .logo .dx-logo-img { width: 140px; height: auto; }
 #globalHeader .logo.dsk .dx-logo { font-size: 32px; }
 #globalHeader .logo.stk { width: auto; }
 #globalHeader .logo.stk .dx-logo,

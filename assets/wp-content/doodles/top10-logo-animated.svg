@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 110" width="320" height="110" role="img" aria-label="TOP10 NG animated logo">
+  <defs>
+    <style>
+      .t10 { font-family: 'hwmasonregular','hwryanregular',cursive; font-size:54px; font-weight:400; fill:#1f1f1f; }
+      .ng  { font-family: 'hwmasonregular','hwryanregular',cursive; font-size:54px; font-weight:400; fill:#d23b3b; }
+      .bar { fill:#123fb5; }
+
+      /* letter-by-letter draw-in */
+      .l { opacity:0; transform:translateY(14px); animation: rise .5s ease forwards; }
+      @keyframes rise { to { opacity:1; transform:translateY(0); } }
+
+      /* NG pop + hard offset shadow */
+      .ng { opacity:0; transform:translateY(0); animation: pop .55s cubic-bezier(.2,1.4,.4,1) .9s forwards; }
+      @keyframes pop {
+        0%   { opacity:0; transform:translate(6px,6px); }
+        60%  { opacity:1; transform:translate(-2px,-2px); }
+        100% { opacity:1; transform:translate(0,0); }
+      }
+      .ng-shadow { opacity:0; animation: pop .55s cubic-bezier(.2,1.4,.4,1) .9s forwards; }
+      @keyframes pop { 0%{opacity:0;transform:translate(4px,4px);} 60%{opacity:1;transform:translate(-2px,-2px);} 100%{opacity:1;transform:translate(0,0);} }
+
+      /* underline sweep */
+      .bar { transform:scaleX(0); transform-origin:left; animation: sweep .6s ease 1.4s forwards; }
+      @keyframes sweep { to { transform:scaleX(1); } }
+
+      /* idle pulse loop after intro */
+      .pulse { animation: pulse 2.4s ease-in-out 2.2s infinite; transform-origin:center; }
+      @keyframes pulse { 0%,100%{ transform:scale(1);} 50%{ transform:scale(1.025);} }
+    </style>
+  </defs>
+
+  <g class="pulse">
+    <!-- shadow copy of NG for hard offset -->
+    <text class="ng-shadow" x="206" y="64" fill="#123fb5" opacity="0.18">NG</text>
+
+    <text class="t10" x="6" y="64">
+      <tspan class="l" style="animation-delay:.05s">T</tspan><tspan class="l" style="animation-delay:.18s">O</tspan><tspan class="l" style="animation-delay:.31s">P</tspan><tspan class="l" style="animation-delay:.44s">1</tspan><tspan class="l" style="animation-delay:.57s">0</tspan>
+    </text>
+    <text class="ng" x="200" y="64">NG</text>
+
+    <rect class="bar" x="6" y="78" width="232" height="6" rx="3"/>
+  </g>
+</svg>
