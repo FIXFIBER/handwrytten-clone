@@ -1,0 +1,50 @@
+============================================================
+FREE OPEN-SOURCE ILLUSTRATION & ANIMATION LIBRARIES
+(used to build the TOP10 NG site + animation sample)
+All are FREE to use. Licenses noted. No Handwrytten art used.
+============================================================
+
+1) LOTTIE  (lottie-web  — MIT)
+   - What: tiny JSON vector animations (characters, loaders, icons).
+   - Player: lottie-web  (npm: lottie-web)
+   - Get animations: https://lottiefiles.com   (free + paid; filter FREE)
+   - Code: https://github.com/airbnb/lottie-web
+
+2) LORDICON  (MIT)
+   - What: animated icons (checkmarks, arrows, status, hearts).
+   - Player: @lordicon/element  (npm: @lordicon/element)
+   - Get icons: https://lordicon.com   (free tier + pro)
+   - Code: https://github.com/lordicon-dev/lordicon-element
+
+3) UNDRAW  (MIT)
+   - What: clean recolorable scene illustrations (people, tech, business).
+   - Get: https://undraw.co   (pick a scene, recolor to your brand, download SVG/PNG)
+   - License: MIT — free for personal & commercial, no attribution required.
+
+4) HUMAAANS  (MIT)
+   - What: mix-and-match hand-drawn people (bodies, poses, clothes).
+   - Get: https://humaaans.com   (free Figma library + SVG)
+   - License: MIT.
+
+5) OPEN DOODLES  (CC0 — public domain, no attribution)
+   - What: fun hand-drawn doodles & shapes (scribbles, plants, characters).
+   - Get: https://opendoodles.com   (free SVG, download individually)
+   - License: CC0 — free for any use, no credit needed.
+
+6) STORYSET  (Free plan, by Freepik)
+   - What: illustrated scenario animations you can embed (pasted as Lottie/JSON or iframe).
+   - Get: https://storyset.com   (free with attribution; premium removes it)
+   - Note: not fully open-source, but free to use with credit.
+
+------------------------------------------------------------
+HOW THE SAMPLE WAS BUILT
+------------------------------------------------------------
+Folder: animation-samples/  (live inside the TOP10 NG site at /samples/)
+- Players installed locally from npm: lottie-web, @lordicon/element
+- Sample JSONs: Airbnb lottie-web test animations (MIT) + LottieFiles free pack
+- unDraw / Humaaans / Open Doodles cards use inline SVG in their style
+- The doodle-motif on the TOP10 NG homepage is a Lottie JSON
+  (doodle-motif-1713-buildings-downtown) played by lottie-web.
+
+See the live demo: /samples/  (on the deployed TOP10 NG site)
+============================================================

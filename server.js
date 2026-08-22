@@ -11,6 +11,9 @@ const ASSETS_DIR = path.join(__dirname, 'assets');
 app.use('/wp-content', express.static(path.join(ASSETS_DIR, 'wp-content')));
 app.use('/wp-includes', express.static(path.join(ASSETS_DIR, 'wp-includes')));
 
+// Serve static files inside pages/ (e.g. /samples/assets/*.json)
+app.use(express.static(PAGES_DIR));
+
 // Serve pages
 app.get('/', (req, res) => {
   res.sendFile(path.join(PAGES_DIR, 'index.html'));

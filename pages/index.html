@@ -539,6 +539,9 @@ Schools &amp; more <span class="uline-wrap"><span class="txt">weekly!</span><spa
 
 	<!-- END HERO ANIMATIONS -->
 
+		<!-- TOP10 NG doodle motif (open-source Lottie JSON) -->
+		<div class="doodle-motif" id="doodle-motif" aria-hidden="true"></div>
+
 </section>
 
 <!-- END HERO -->
@@ -1432,6 +1435,20 @@ document.addEventListener( 'wpcf7submit', e => turnstile.reset() );
   window.addEventListener('load', function(){ setTimeout(reveal, 2500); });
   setTimeout(reveal, 8000);
 })();
+</script>
+
+<!-- TOP10 NG — doodle motif (open-source Lottie JSON) on hero right side -->
+<script src="/wp-content/doodles/lottie.min.js"></script>
+<script>
+  if (window.lottie) {
+    lottie.loadAnimation({
+      container: document.getElementById('doodle-motif'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: '/wp-content/doodles/doodle-motif.json'
+    });
+  }
 </script>
 </body>
 </html>

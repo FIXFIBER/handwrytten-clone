@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TOP10 NG — Open-Source Animation Sample</title>
+<style>
+  :root{
+    --ink:#1f1f1f; --paper:#f5f6f0; --accent:#d23b3b; --muted:#6b6b63;
+    --blue:#123fb5;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
+    line-height:1.5;
+  }
+  header{ text-align:center; padding:48px 20px 10px; }
+  header h1{ font-size:34px; margin:0 0 6px; letter-spacing:.5px; }
+  header h1 .ng{color:var(--accent)}
+  header p{color:var(--muted); max-width:680px; margin:0 auto; font-size:15px}
+  .hero-doodle{ width:min(60vw,340px); margin:18px auto 6px; }
+  .hero-doodle svg{ width:100% !important; height:auto !important; display:block; }
+  .grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px; max-width:1080px; margin:24px auto 60px; padding:0 20px;
+  }
+  .card{
+    background:#fff; border:1px solid #e4e4dc; border-radius:14px;
+    padding:22px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,.04);
+  }
+  .card .ico{height:140px; display:flex; align-items:center; justify-content:center; margin-bottom:12px}
+  .card .ico svg, .card .ico lottie-player, .card .ico .lottie-box{width:130px; height:130px}
+  .card h3{margin:6px 0 4px; font-size:18px}
+  .card .lib{font-size:12px; color:var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:1px}
+  .card p{font-size:13px; color:var(--muted); margin:8px 0 0}
+  .card a{font-size:12px; color:var(--muted); text-decoration:none; border-bottom:1px dotted var(--muted)}
+  .back{ text-align:center; padding-bottom:50px; }
+  .back a{ color:var(--blue); text-decoration:none; font-weight:600; }
+  footer{text-align:center; color:var(--muted); font-size:13px; padding:0 20px 50px}
+</style>
+</head>
+<body>
+<header>
+  <h1>TOP10 <span class="ng">NG</span> — Open-Source Animation Sample</h1>
+  <p>Everything below uses FREE, open-source libraries &amp; assets (MIT / CC0 / open).
+  No Handwrytten art. This is a live demo of what these tools can do together for the TOP10 NG brand.</p>
+</header>
+
+<!-- the doodle motif from the homepage, shown big here -->
+<div class="hero-doodle" id="doodle-motif" aria-hidden="true"></div>
+
+<div class="grid">
+
+  <!-- 1. LOTTIE (lottie-web) -->
+  <div class="card">
+    <div class="ico"><div class="lottie-box" id="lt-robot"></div></div>
+    <div class="lib">Lottie</div>
+    <h3>Friendly Robot</h3>
+    <p>Vector animation rendered by <b>lottie-web</b> (MIT). Great for hero characters, loaders, mascots.</p>
+    <a href="https://lottiefiles.com" target="_blank">lottiefiles.com</a>
+  </div>
+
+  <div class="card">
+    <div class="ico"><div class="lottie-box" id="lt-star"></div></div>
+    <div class="lib">Lottie</div>
+    <h3>Rating Star</h3>
+    <p>Same player, different JSON. Drop in any .json and it animates — no video, tiny file.</p>
+    <a href="https://github.com/airbnb/lottie-web" target="_blank">airbnb/lottie-web</a>
+  </div>
+
+  <!-- 2. LORDICON — inline SVG fallback; player installed -->
+  <div class="card">
+    <div class="ico"><svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="width:120px;height:120px">
+      <g fill="none" stroke="#d23b3b" stroke-width="6" stroke-linecap="round">
+        <path d="M30 70 L55 92 L92 38" stroke-dasharray="120" stroke-dashoffset="120">
+          <animate attributeName="stroke-dashoffset" from="120" to="0" dur="1.1s" repeatCount="indefinite"/>
+        </path>
+      </g>
+      <circle cx="60" cy="60" r="46" fill="none" stroke="#1f1f1f" stroke-width="4" opacity=".25"/>
+    </svg></div>
+    <div class="lib">Lordicon</div>
+    <h3>Animated Icon</h3>
+    <p><b>@lordicon/element</b> player is installed — drop any Lordicon <code>.json</code> in and it animates. Sample above is an inline fallback.</p>
+    <a href="https://lordicon.com" target="_blank">lordicon.com</a>
+  </div>
+
+  <!-- 3. UNDRAW (inline SVG, MIT) -->
+  <div class="card">
+    <div class="ico"><svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+      <rect x="20" y="30" width="160" height="90" rx="10" fill="#e9eadf"/>
+      <circle cx="70" cy="55" r="22" fill="#d23b3b"/>
+      <rect x="105" y="48" width="60" height="10" rx="5" fill="#1f1f1f"/>
+      <rect x="105" y="66" width="44" height="8" rx="4" fill="#6b6b63"/>
+      <circle cx="160" cy="95" r="6" fill="#d23b3b"/>
+      <rect x="30" y="95" width="70" height="8" rx="4" fill="#bdbdb2"/>
+    </svg></div>
+    <div class="lib">unDraw</div>
+    <h3>Scene Illustration</h3>
+    <p>Inline SVG you recolor to brand. MIT license — use anywhere, edit freely.</p>
+    <a href="https://undraw.co" target="_blank">undraw.co</a>
+  </div>
+
+  <!-- 4. HUMAANS (inline SVG, MIT) -->
+  <div class="card">
+    <div class="ico"><svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="45" r="20" fill="#1f1f1f"/>
+      <rect x="78" y="70" width="44" height="55" rx="14" fill="#d23b3b"/>
+      <rect x="60" y="78" width="14" height="40" rx="7" fill="#1f1f1f" transform="rotate(20 67 98)"/>
+      <rect x="126" y="78" width="14" height="40" rx="7" fill="#1f1f1f" transform="rotate(-20 133 98)"/>
+      <rect x="84" y="122" width="14" height="18" rx="6" fill="#1f1f1f"/>
+      <rect x="102" y="122" width="14" height="18" rx="6" fill="#1f1f1f"/>
+    </svg></div>
+    <div class="lib">Humaaans</div>
+    <h3>People Mix</h3>
+    <p>Hand-drawn people, MIT — remix bodies/poses for testimonials &amp; communities.</p>
+    <a href="https://humaaans.com" target="_blank">humaaans.com</a>
+  </div>
+
+  <!-- 5. OPEN DOODLES (inline SVG, CC0) -->
+  <div class="card">
+    <div class="ico"><svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+      <path d="M40 120 Q60 50 100 60 Q150 70 160 120" fill="none" stroke="#d23b3b" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="150" cy="40" r="14" fill="#1f1f1f"/>
+      <path d="M30 120 q20 -20 40 0" fill="none" stroke="#6b6b63" stroke-width="6" stroke-linecap="round"/>
+    </svg></div>
+    <div class="lib">Open Doodles</div>
+    <h3>Hand Doodle</h3>
+    <p>CC0 scribbles &amp; shapes — free for any use, no attribution needed.</p>
+    <a href="https://opendoodles.com" target="_blank">opendoodles.com</a>
+  </div>
+
+</div>
+
+<div class="back"><a href="/">← Back to TOP10 NG</a></div>
+
+<footer>
+  Built with open-source players loaded locally (lottie-web + @lordicon/element).<br/>
+  Assets: Airbnb Lottie test animations (MIT), LottieFiles free pack, unDraw/Humaaans/Open Doodles style SVGs.
+</footer>
+
+<!-- open-source player (local copy, no CDN) -->
+<script src="/wp-content/doodles/lottie.min.js"></script>
+<script>
+  // big doodle on this page
+  if (window.lottie) {
+    lottie.loadAnimation({
+      container: document.getElementById('doodle-motif'),
+      renderer:'svg', loop:true, autoplay:true,
+      path:'/wp-content/doodles/doodle-motif.json'
+    });
+    // card robots
+    lottie.loadAnimation({ container: document.getElementById('lt-robot'), renderer:'svg', loop:true, autoplay:true, path:'assets/lottie-robot.json' });
+    lottie.loadAnimation({ container: document.getElementById('lt-star'),  renderer:'svg', loop:true, autoplay:true, path:'assets/lottie-starfish.json' });
+  }
+</script>
+</body>
+</html>
