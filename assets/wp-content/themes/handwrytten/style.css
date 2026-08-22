@@ -2012,6 +2012,100 @@ body.dark-header #globalHeader.sticky .toplinks .top > li > a {
 	display: block;
 }
 
+/* TOP10 NG — keep original black phone frame, overlay a scrolling "Top 10 Hospitals" list on its screen */
+#home-about .buckets.split .bucket.left .typer-field,
+#home-about .buckets.split .bucket.left .phone-button { display: none; }
+
+#home-about .buckets.split .bucket.left .phone-screen-top10 {
+	position: absolute;
+	/* bucket is 530 wide; screen interior ~ left 188 top 60 w 160 h 330 (@1x) */
+	left: 188px;
+	top: 60px;
+	width: 162px;
+	height: 332px;
+	z-index: 4;
+	display: flex;
+	flex-direction: column;
+	border-radius: 4px;
+	overflow: hidden;
+	background: #f4f6fa;
+	box-shadow: inset 0 0 0 1px rgba(8,15,40,.06);
+}
+#home-about .phone-screen-top10 .pt10-bar {
+	background: #123fb5;
+	padding: 7px 9px;
+	display: flex;
+	align-items: center;
+}
+#home-about .phone-screen-top10 .pt10-logo {
+	font-family: "Playfair Display", Georgia, serif;
+	color: #fff;
+	font-weight: 700;
+	font-size: 11px;
+	letter-spacing: .3px;
+}
+#home-about .phone-screen-top10 .pt10-ng { color: #ff7a59; }
+#home-about .phone-screen-top10 .pt10-head {
+	background: #fff;
+	color: #10141b;
+	font-size: 10px;
+	font-weight: 700;
+	padding: 6px 9px;
+	border-bottom: 1px solid #e7e9ee;
+}
+#home-about .phone-screen-top10 .pt10-scroll {
+	flex: 1 1 auto;
+	overflow: hidden;
+	position: relative;
+}
+#home-about .phone-screen-top10 .pt10-list {
+	position: absolute;
+	top: 0; left: 0; right: 0;
+	display: flex;
+	flex-direction: column;
+	animation: pt10Scroll 16s linear infinite;
+}
+#home-about .phone-screen-top10 .pt10-row {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	padding: 5px 9px;
+	border-bottom: 1px solid #eef0f4;
+	font-size: 8.5px;
+	line-height: 1.1;
+}
+#home-about .phone-screen-top10 .pt10-num {
+	flex: 0 0 auto;
+	width: 13px; height: 13px;
+	border-radius: 50%;
+	background: #123fb5;
+	color: #fff;
+	font-size: 7px;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#home-about .phone-screen-top10 .pt10-name {
+	flex: 1 1 auto;
+	color: #10141b;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+#home-about .phone-screen-top10 .pt10-city {
+	flex: 0 0 auto;
+	color: #6b7280;
+	font-size: 7px;
+}
+@keyframes pt10Scroll {
+	0%   { transform: translateY(0); }
+	100% { transform: translateY(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+	#home-about .phone-screen-top10 .pt10-list { animation: none; }
+}
+
 @media (max-width: 980px) {
 	#home-hero .doodle-motif {
 		position: relative;

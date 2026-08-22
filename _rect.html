@@ -1,0 +1,17 @@
+<!doctype html><meta charset=utf-8><body style="margin:0">
+<script>
+window.addEventListener('load',()=>{
+  const el=document.querySelector('#home-about .buckets.split .bucket.left');
+  const r=el.getBoundingClientRect();
+  const out={x:Math.round(r.x),y:Math.round(r.y),w:Math.round(r.width),h:Math.round(r.height)};
+  // also screen text presence
+  const has=!!document.querySelector('.phone-screen-top10 .pt10-row');
+  const txt=document.querySelector('.phone-screen-top10')?document.querySelector('.phone-screen-top10').innerText.slice(0,120):'';
+  const data=JSON.stringify({rect:out,has, txt});
+  const a=document.createElement('a'); a.href='data:text/plain;base64,'+btoa(unescape(encodeURIComponent(data)));
+  a.id='d'; document.body.appendChild(a);
+  document.title='RECT:'+data;
+});
+</script>
+<iframe src="http://localhost:8899/" style="width:1280px;height:3000px;border:0"></iframe>
+</body></html>
