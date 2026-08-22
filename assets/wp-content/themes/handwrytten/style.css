@@ -20853,3 +20853,13 @@ body.test .hasAnim .part-wrap:after {
 .elementor-full-width .entry-content {
   padding: 0;
 }
+/* TOP10 NG — global font: Playfair Display (elegant editorial serif) */
+html, body,
+h1, h2, h3, h4, h5, h6,
+p, a, span, li, blockquote, label, button, input, textarea, select {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+/* keep the handwriting logo + doodle marks using their own fonts */
+.dx-logo, .dx-logo-img, .handwriting, .hw-font {
+    font-family: "hwmasonregular", "hwryanregular", cursive;
+}
