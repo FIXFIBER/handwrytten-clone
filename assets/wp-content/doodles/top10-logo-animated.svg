@@ -1,43 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 110" width="320" height="110" role="img" aria-label="TOP10 NG animated logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120" width="360" height="120" role="img" aria-label="TOP10 NG animated logo">
   <defs>
     <style>
-      .t10 { font-family: 'hwmasonregular','hwryanregular',cursive; font-size:54px; font-weight:400; fill:#1f1f1f; }
-      .ng  { font-family: 'hwmasonregular','hwryanregular',cursive; font-size:54px; font-weight:400; fill:#d23b3b; }
-      .bar { fill:#123fb5; }
+      .t10 { font-family:'hwmasonregular','hwryanregular',cursive; font-size:58px; font-weight:400; fill:#1f1f1f; }
+      .ng  { font-family:'hwmasonregular','hwryanregular',cursive; font-size:58px; font-weight:400; fill:#d23b3b; }
+      .ng-shadow { fill:#123fb5; opacity:0; }
+      .bar { fill:#123fb5; transform:scaleX(0); transform-origin:left; }
 
-      /* letter-by-letter draw-in */
-      .l { opacity:0; transform:translateY(14px); animation: rise .5s ease forwards; }
+      /* whole-logo gentle float (idle, starts after intro) */
+      .float { animation: float 3.4s ease-in-out 2s infinite; transform-origin:center; }
+      @keyframes float { 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-4px);} }
+
+      /* TOP10 letters write in, staggered */
+      .l { opacity:0; transform:translateY(18px); animation: rise .55s cubic-bezier(.2,.8,.3,1) forwards; }
       @keyframes rise { to { opacity:1; transform:translateY(0); } }
 
-      /* NG pop + hard offset shadow */
-      .ng { opacity:0; transform:translateY(0); animation: pop .55s cubic-bezier(.2,1.4,.4,1) .9s forwards; }
-      @keyframes pop {
-        0%   { opacity:0; transform:translate(6px,6px); }
-        60%  { opacity:1; transform:translate(-2px,-2px); }
-        100% { opacity:1; transform:translate(0,0); }
-      }
-      .ng-shadow { opacity:0; animation: pop .55s cubic-bezier(.2,1.4,.4,1) .9s forwards; }
-      @keyframes pop { 0%{opacity:0;transform:translate(4px,4px);} 60%{opacity:1;transform:translate(-2px,-2px);} 100%{opacity:1;transform:translate(0,0);} }
-
-      /* underline sweep */
-      .bar { transform:scaleX(0); transform-origin:left; animation: sweep .6s ease 1.4s forwards; }
+      /* blue bar sweep under the word */
+      .bar { animation: sweep .65s cubic-bezier(.6,0,.2,1) .72s forwards; }
       @keyframes sweep { to { transform:scaleX(1); } }
 
-      /* idle pulse loop after intro */
-      .pulse { animation: pulse 2.4s ease-in-out 2.2s infinite; transform-origin:center; }
-      @keyframes pulse { 0%,100%{ transform:scale(1);} 50%{ transform:scale(1.025);} }
+      /* NG stamps in with bounce + hard offset shadow */
+      .ng, .ng-shadow { animation: stamp .6s cubic-bezier(.18,1.5,.4,1) 1.05s forwards; }
+      @keyframes stamp {
+        0%   { opacity:0; transform:translateY(-38px) scale(.7); }
+        55%  { opacity:1; transform:translateY(6px)  scale(1.06); }
+        75%  { transform:translateY(-3px) scale(.98); }
+        100% { opacity:1; transform:translateY(0)    scale(1); }
+      }
+      .ng-shadow { opacity:0; }
+      @keyframes stamp { 0%{opacity:0;transform:translate(4px,4px) translateY(-38px);} 55%{opacity:.20;transform:translate(4px,4px) translateY(6px);} 100%{opacity:.20;transform:translate(4px,4px);} }
+
+      /* NG subtle breathing (idle) */
+      .ng-pulse { animation: ngpulse 2.6s ease-in-out 2s infinite; transform-origin:center; }
+      @keyframes ngpulse { 0%,100%{ transform:scale(1);} 50%{ transform:scale(1.04);} }
     </style>
   </defs>
 
-  <g class="pulse">
-    <!-- shadow copy of NG for hard offset -->
-    <text class="ng-shadow" x="206" y="64" fill="#123fb5" opacity="0.18">NG</text>
+  <g class="float">
+    <g class="ng-pulse">
+      <text class="ng-shadow" x="222" y="74">NG</text>
+    </g>
 
-    <text class="t10" x="6" y="64">
-      <tspan class="l" style="animation-delay:.05s">T</tspan><tspan class="l" style="animation-delay:.18s">O</tspan><tspan class="l" style="animation-delay:.31s">P</tspan><tspan class="l" style="animation-delay:.44s">1</tspan><tspan class="l" style="animation-delay:.57s">0</tspan>
+    <text class="t10" x="8" y="74">
+      <tspan class="l" style="animation-delay:.06s">T</tspan><tspan class="l" style="animation-delay:.18s">O</tspan><tspan class="l" style="animation-delay:.30s">P</tspan><tspan class="l" style="animation-delay:.42s">1</tspan><tspan class="l" style="animation-delay:.54s">0</tspan>
     </text>
-    <text class="ng" x="200" y="64">NG</text>
 
-    <rect class="bar" x="6" y="78" width="232" height="6" rx="3"/>
+    <g class="ng-pulse">
+      <text class="ng" x="216" y="74">NG</text>
+    </g>
+
+    <rect class="bar" x="8" y="90" width="300" height="6" rx="3"/>
   </g>
 </svg>
