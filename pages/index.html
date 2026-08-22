@@ -1441,12 +1441,16 @@ document.addEventListener( 'wpcf7submit', e => turnstile.reset() );
 <script src="/wp-content/doodles/lottie.min.js"></script>
 <script>
   if (window.lottie) {
-    lottie.loadAnimation({
+    var dmAnim = lottie.loadAnimation({
       container: document.getElementById('doodle-motif'),
       renderer: 'svg',
-      loop: true,
+      loop: false,
       autoplay: true,
       path: '/wp-content/doodles/doodle-motif.json'
+    });
+    // play the reveal once on load, then hold the final drawn frame (static)
+    dmAnim.addEventListener('complete', function () {
+      dmAnim.goToAndStop(dmAnim.totalFrames - 1, true);
     });
   }
 </script>
